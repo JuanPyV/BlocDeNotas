@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bloc de Notas</title>
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+    <link rel="stylesheet" href="./style.css" type="text/css">
+
+</head>
+<body>
+    <!-- partial:index.partial.html -->
+    <div class="comments">
+        <h1>Bloc de Notas</h1>
+        <hr/>
+        <div class="note-wrap">
+            <div class="note-block newNote">
+                <form action="">
+                    <textarea name="" id="note_title" maxlength="25" cols="30" rows="3" placeholder="Escribe el titulo..."></textarea>
+                </form>
+            </div>
+        </div>
+
+        <div class="note-wrap">
+            <div class="note-block newNote">
+                <form action="">
+                    <textarea name="" id="note_body" cols="30" rows="15" placeholder="Nueva Nota..."></textarea>
+                    <div class="bottom-notes">
+                        <ul class="note-actions">
+                            <li class="save">Guardar</li>
+                        </ul>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+
+        <div class="note-container">
+
+
+        </div>
+    </div>
+    <!-- loading the minified version using jsDelivr -->
+    <script src="https://cdn.jsdelivr.net/npm/ipfs-core/dist/index.min.js"></script>
+
+    <!-- loading the human-readable (not minified) version jsDelivr -->
+    <script src="https://cdn.jsdelivr.net/npm/ipfs-core/dist/index.min.js"></script>
+    <script src="ipfs.js"></script>
+    <script src="notes.js"></script>
+</body>
+</html>

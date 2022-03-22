@@ -1,0 +1,198 @@
+h1 {
+  font-family: "PT Sans", "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+hr {
+  margin-bottom: 1.25rem;
+}
+
+html, body {
+  background-color: #f0f2fa;
+  font-family: "PT Sans", "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
+  color: #555f77;
+  -webkit-font-smoothing: antialiased;
+}
+
+input, textarea {
+  outline: none;
+  border: none;
+  display: block;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  font-family: "PT Sans", "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
+  font-size: 1rem;
+  color: #555f77;
+  background-color: #fff !important;
+}
+input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
+  color: #ced2db;
+}
+input::-moz-placeholder, textarea::-moz-placeholder {
+  color: #ced2db;
+}
+input:-moz-placeholder, textarea:-moz-placeholder {
+  color: #ced2db;
+}
+input:-ms-input-placeholder, textarea:-ms-input-placeholder {
+  color: #ced2db;
+}
+
+p {
+  line-height: 1.3125rem;
+}
+
+.comments {
+  margin: 2.5rem auto 0;
+  max-width: 60.75rem;
+  padding: 0 1.25rem;
+}
+
+.note-wrap {
+  margin-bottom: 1.25rem;
+  display: table;
+  width: 100%;
+  min-height: 5.3125rem;
+}
+.note-wrap :hover {
+  background-color: #f3f3f3;
+}
+.note-wrap .note-actions {
+  float: right;
+}
+.note-wrap .note-actions li {
+  display: inline;
+  margin: -2px;
+  cursor: pointer;
+}
+.note-wrap .note-actions li.upload {
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  font-weight: bold;
+  border-right: 1px solid #e1e5eb;
+  margin: 2px;
+}
+.note-wrap .note-actions li.upload:hover {
+  background-color: transparent !important;
+}
+.note-wrap .note-actions li.edit {
+  padding-right: 0.75rem;
+  border-right: 1px solid #e1e5eb;
+}
+.note-wrap .note-actions li.delete {
+  padding-left: 0.75rem;
+  padding-right: 0.125rem;
+}
+.note-wrap .note-actions li.save {
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  font-weight: bold;
+  margin: 2px;
+  text-align: center;
+}
+.note-wrap .note-actions li.save:hover {
+  background-color: transparent !important;
+}
+.note-wrap .note-actions li:hover {
+  color: #000000;
+}
+.note-wrap .note-actions:hover {
+  background-color: transparent !important;
+}
+
+.newNote {
+  background-color: #fff !important;
+}
+
+.list ul {
+  margin: 20px 0;
+  padding: 0;
+  white-space: nowrap;
+}
+.list li {
+  margin: 0.3125rem;
+  list-style-type: none;
+  width: 20%;
+  display: inline-block;
+}
+.list .wrap {
+  display: block;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  overflow: hidden;
+  background: #eee;
+  color: #333;
+  position: relative;
+  text-decoration: none !important;
+}
+.list .wrap:hover, .list .wrap:focus {
+  color: #0095ff;
+}
+.list .wrap:before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border-radius: 5px;
+  box-shadow: 0 5px 0 0;
+  z-index: 2;
+}
+.list img {
+  display: block;
+  margin: 0.625rem;
+  max-width: 90%;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  position: relative;
+  z-index: 1;
+}
+.list p {
+  margin: 0;
+  position: relative;
+  z-index: 2;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  padding: 10px;
+  background: #eee !important;
+  font-size: 0.875rem;
+}
+
+.note-block {
+  padding: 1rem;
+  background-color: #fff;
+  display: table-cell;
+  vertical-align: top;
+  border-radius: 1rem;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.08);
+}
+.note-block textarea {
+  width: 100%;
+  resize: none;
+}
+
+.note-text {
+  margin-bottom: 1.25rem;
+  margin-top: 0.625rem;
+}
+
+.bottom-notes {
+  color: #acb4c2;
+  font-size: 0.875rem;
+}
+
+.time-stamp {
+  float: top;
+  color: #acb4c2;
+  font-size: 0.875rem;
+}
+
+.note-title {
+  float: top;
+  font-weight: bold;
+  margin-bottom: 0.25rem;
+}
