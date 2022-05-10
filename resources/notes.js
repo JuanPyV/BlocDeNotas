@@ -8,21 +8,20 @@ class Note{
         this.title = title;
         this.body = body;
         if(!id){
-            this.id = Math.random();
+            this.id = Math.random(); // CONVERT TO STRING
         } else {
             this.id = id;
         }
     }
 }
 
-function addNotes(note) {
+function renderNote(note) {
     let newNote = document.createElement("div");
     newNote.classList.add("note-wrap");
     newNote.innerHTML =
         `<div class="note-block">
             <span class="note-id" hidden>${note.id}</span>
             <div class="note-title">${note.title}</div>
-            <div class="time-stamp">Mar 20, 2022</div>
                 <p class="note-text">${note.body}</p>
             <div class="bottom-notes">
                 <ul class="note-actions">                    
@@ -34,7 +33,6 @@ function addNotes(note) {
 }
 
 function deleteNote(id){
-    removeNote(id);
     console.log("ID BORRADA: " + id);
 }
 
@@ -48,8 +46,7 @@ submit.addEventListener("click", (e) => {
 
     if(title.value.length > 0 && body.value.length > 0){
         const newNote = new Note(title.value, body.value);
-        addNotes(newNote);
-        addNote(newNote);
+        createNote(newNote);
         title.value = "";
         body.value = "";
     }else{
