@@ -37,7 +37,7 @@ function deleteNote(id){
     });
 }
 
-// DELETE NOTE AJAX REQUEST
+// EDIT NOTE AJAX REQUEST
 function editNote(note){
     $.ajax({
         url: '/notes/'+note.id,
