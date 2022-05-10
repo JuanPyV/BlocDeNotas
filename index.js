@@ -1,5 +1,6 @@
 const IPFS = require('ipfs-core');
 const express = require('express');
+const { v4: uuidv4 } = require('uuid');
 
 const app = express();
 const port = 8080;
@@ -8,7 +9,7 @@ let node;
 async function initializeNetwork(){
     node = await IPFS.create({ cid: 'QmdyyWzBrsJrngzcmeuPwecqUhpnhQV3jbcgSMF5AgHK3b' });
     let notesFile;
-    await node.files.rm('/notes.json'); // FOR DEBUGING PURPOSES, PLEASE DELETE
+    //await node.files.rm('/notes.json'); // FOR DEBUGING PURPOSES, PLEASE DELETE
     try {
         notesFile = await node.files.stat('/notes.json');
     } catch (e) {
@@ -44,6 +45,7 @@ app.post('/notes', async (req, res) => {
     const data = await getData();
     const parsedData = JSON.parse(data);
     const newNote = req.body;
+    newNote.id = uuidv4();
     parsedData.push(newNote);
     
     node.files.write('/notes.json', new TextEncoder().encode(JSON.stringify(parsedData))).then(()=>{

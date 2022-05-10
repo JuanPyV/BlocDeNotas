@@ -13,16 +13,37 @@ function getNotes(){
     });
 }
 
+function refreshNotes(response){
+    $(".note-container").empty(); // CLEAR NOTE CONTAINER
+    getNotes();
+}
+
 // CREATE NOTE AJAX REQUEST
 function createNote(note){
     $.ajax({
         url: '/notes',
         type: 'POST',
         data: note,
-        success: function(response){
-            $(".note-container").empty(); // CLEAR NOTE CONTAINER
-            getNotes();
-        }
+        success: refreshNotes
+    });
+}
+
+// DELETE NOTE AJAX REQUEST
+function deleteNote(id){
+    $.ajax({
+        url: '/notes/'+id,
+        type: 'DELETE',
+        success: refreshNotes
+    });
+}
+
+// DELETE NOTE AJAX REQUEST
+function editNote(note){
+    $.ajax({
+        url: '/notes/'+note.id,
+        type: 'PUT',
+        data: note,
+        success: refreshNotes
     });
 }
 

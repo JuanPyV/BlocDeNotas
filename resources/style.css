@@ -78,21 +78,25 @@ p {
   background-color: transparent !important;
 }
 .note-wrap .note-actions li.edit {
+  display: inline-block;
   padding-right: 0.75rem;
   border-right: 1px solid #e1e5eb;
+
 }
 .note-wrap .note-actions li.delete {
+  display: inline-block;
   padding-left: 0.75rem;
-  padding-right: 0.125rem;
+  padding-right: 0.75rem;
+
 }
-.note-wrap .note-actions li.save {
+.note-wrap .note-actions li.submit {
   padding-left: 0.75rem;
   padding-right: 0.75rem;
   font-weight: bold;
   margin: 2px;
   text-align: center;
 }
-.note-wrap .note-actions li.save:hover {
+.note-wrap .note-actions li.submit:hover {
   background-color: transparent !important;
 }
 .note-wrap .note-actions li:hover {
@@ -104,62 +108,6 @@ p {
 
 .newNote {
   background-color: #fff !important;
-}
-
-.list ul {
-  margin: 20px 0;
-  padding: 0;
-  white-space: nowrap;
-}
-.list li {
-  margin: 0.3125rem;
-  list-style-type: none;
-  width: 20%;
-  display: inline-block;
-}
-.list .wrap {
-  display: block;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-  overflow: hidden;
-  background: #eee;
-  color: #333;
-  position: relative;
-  text-decoration: none !important;
-}
-.list .wrap:hover, .list .wrap:focus {
-  color: #0095ff;
-}
-.list .wrap:before {
-  content: "";
-  display: block;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  border-radius: 5px;
-  box-shadow: 0 5px 0 0;
-  z-index: 2;
-}
-.list img {
-  display: block;
-  margin: 0.625rem;
-  max-width: 90%;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
-  position: relative;
-  z-index: 1;
-}
-.list p {
-  margin: 0;
-  position: relative;
-  z-index: 2;
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
-  padding: 10px;
-  background: #eee !important;
-  font-size: 0.875rem;
 }
 
 .note-block {
@@ -181,12 +129,6 @@ p {
 }
 
 .bottom-notes {
-  color: #acb4c2;
-  font-size: 0.875rem;
-}
-
-.time-stamp {
-  float: top;
   color: #acb4c2;
   font-size: 0.875rem;
 }
