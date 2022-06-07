@@ -2,16 +2,41 @@ h1 {
   font-family: "PT Sans", "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
   font-size: 1.25rem;
   font-weight: bold;
+  display: inline-flex;
+  color: var(--text-color);
 }
 
 hr {
   margin-bottom: 1.25rem;
+  color: var(--text-color);
 }
 
-html, body {
-  background-color: #f0f2fa;
+:root{
+  --text-color: #555f77;
+  --hover-color: #000;
+  --primary-color: #f0f2fa;
+  --secondary-color: #fff;
+
+
+}
+.dark-theme {
+  --text-color: #ffffff;
+  --hover-color: #a5a5a5;
+  --primary-color: #3a3a3a;
+  --secondary-color: #585858;
+}
+
+#icon{
+  padding-left: 80%;
+  text-align: right;
+  flex: 1;
+  width: 30px;
+  cursor: pointer;
+}
+
+body {
+  background-color: var(--primary-color);
   font-family: "PT Sans", "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
-  color: #555f77;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -24,27 +49,27 @@ input, textarea {
   -webkit-font-smoothing: antialiased;
   font-family: "PT Sans", "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
   font-size: 1rem;
-  color: #555f77;
-  background-color: #fff !important;
+  color: var(--text-color);
+  background-color: var(--secondary-color) !important;
 }
 input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
-  color: #ced2db;
+  color: var(--text-color);
 }
 input::-moz-placeholder, textarea::-moz-placeholder {
-  color: #ced2db;
+  color: var(--text-color);
 }
 input:-moz-placeholder, textarea:-moz-placeholder {
-  color: #ced2db;
+  color: var(--text-color);
 }
 input:-ms-input-placeholder, textarea:-ms-input-placeholder {
-  color: #ced2db;
+  color: var(--text-color);
 }
 
 p {
   line-height: 1.3125rem;
 }
 
-.comments {
+.notes {
   margin: 2.5rem auto 0;
   max-width: 60.75rem;
   padding: 0 1.25rem;
@@ -56,9 +81,7 @@ p {
   width: 100%;
   min-height: 5.3125rem;
 }
-.note-wrap :hover {
-  background-color: #f3f3f3;
-}
+
 .note-wrap .note-actions {
   float: right;
 }
@@ -67,52 +90,53 @@ p {
   margin: -2px;
   cursor: pointer;
 }
-.note-wrap .note-actions li.upload {
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
-  font-weight: bold;
-  border-right: 1px solid #e1e5eb;
-  margin: 2px;
-}
-.note-wrap .note-actions li.upload:hover {
-  background-color: transparent !important;
-}
+
 .note-wrap .note-actions li.edit {
   display: inline-block;
   padding-right: 0.75rem;
   border-right: 1px solid #e1e5eb;
-
+  color: var(--text-color)
 }
+.note-wrap .note-actions li.edit:hover {
+  background-color: transparent !important;
+}
+
 .note-wrap .note-actions li.delete {
   display: inline-block;
   padding-left: 0.75rem;
   padding-right: 0.75rem;
-
+  color: var(--text-color)
 }
+.note-wrap .note-actions li.delete:hover {
+  background-color: transparent !important;
+}
+
 .note-wrap .note-actions li.submit {
   padding-left: 0.75rem;
   padding-right: 0.75rem;
   font-weight: bold;
   margin: 2px;
   text-align: center;
+  color: var(--text-color)
 }
 .note-wrap .note-actions li.submit:hover {
   background-color: transparent !important;
 }
+
 .note-wrap .note-actions li:hover {
-  color: #000000;
+  color: var(--hover-color);
 }
 .note-wrap .note-actions:hover {
   background-color: transparent !important;
 }
 
 .newNote {
-  background-color: #fff !important;
+  background-color: var(--secondary-color) !important;
 }
 
 .note-block {
   padding: 1rem;
-  background-color: #fff;
+  background-color: var(--secondary-color) !important;
   display: table-cell;
   vertical-align: top;
   border-radius: 1rem;
@@ -126,6 +150,10 @@ p {
 .note-text {
   margin-bottom: 1.25rem;
   margin-top: 0.625rem;
+  color: var(--text-color)
+}
+.note-text:hover{
+  background-color: var(--secondary-color);
 }
 
 .bottom-notes {
@@ -137,4 +165,8 @@ p {
   float: top;
   font-weight: bold;
   margin-bottom: 0.25rem;
+  color: var(--text-color)
+}
+.note-title:hover{
+  background-color: var(--secondary-color);
 }

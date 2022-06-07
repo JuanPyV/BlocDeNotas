@@ -21,8 +21,8 @@ function renderNote(note) {
                 <p class="note-text" id="note-body-${note.id}">${note.body}</p>
             <div class="bottom-notes">
                 <ul class="note-actions">     
-                    <li class="edit">Editar</li>                  
-                    <li class="delete">Borrar</li>                    
+                    <li class="edit" tabindex="0">Editar</li>                  
+                    <li class="delete" tabindex="0">Borrar</li>                    
                 </ul>
             </div>
         </div>`;
