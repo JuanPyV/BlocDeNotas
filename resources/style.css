@@ -26,6 +26,10 @@ hr {
   --secondary-color: #585858;
 }
 
+.header {
+  display: flex;
+}
+
 #icon{
   padding-left: 80%;
   text-align: right;

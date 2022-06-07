@@ -11,8 +11,13 @@
 <body>
     <!-- partial:index.partial.html -->
     <div class="notes">
-        <h1>Bloc de Notas</h1>
-        <img src="img/moon.png" id="icon" alt="">
+        <div class="header">
+            <h1>Bloc de Notas</h1>
+            <div id="icon">
+                <img tabindex="0" class="theme_icon" src="img/moon.png" alt="mode_button" height="20px">
+            </div>
+        </div>
+        
         <hr/>
         <div class="note-wrap">
             <div class="note-block newNote">
@@ -50,18 +55,5 @@
 
     <script src="notes.js"></script>
     <script src="helper.js"></script>
-
-    <script>
-        var icon = document.getElementById("icon");
-
-        icon.onclick = function() {
-            document.body.classList.toggle("dark-theme");
-            if(document.body.classList.contains("dark-theme")){
-                icon.src="img/sun.png";
-            }else{
-                icon.src="img/moon.png";
-            }
-        }
-    </script>
 </body>
 </html>

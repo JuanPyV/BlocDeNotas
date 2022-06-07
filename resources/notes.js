@@ -2,6 +2,7 @@ const title = document.getElementById("note_title");
 const body = document.getElementById("note_body");
 const notes_container = $(".note-container");
 const submit = $(".submit");
+var theme_icon = $(".theme_icon");
 
 class Note {
     constructor(title, body, id) {
@@ -46,7 +47,18 @@ function editNotePrompt(id) {
     }
 }
 
-submit.on("click", (e) => {
+var notes_handler = function(e){
+    const currentNote = e.target.closest('.note-wrap');
+    const id = currentNote.querySelector('span.note-id').textContent;
+
+    if (e.target.classList.contains("delete")) {
+        deleteNote(id);
+    } else if (e.target.classList.contains("edit")) {
+        editNotePrompt(id);
+    }
+};
+
+var submit_handler = function(e){
     e.preventDefault();
 
     if (title.value.length > 0 && body.value.length > 0) {
@@ -57,15 +69,37 @@ submit.on("click", (e) => {
     } else {
         alert("Por favor agrega un titulo y un texto");
     }
+};
+
+var theme_handler = function(e) {
+    const $bodyElem = $('body');
+    if($bodyElem.hasClass("dark-theme")){
+        $bodyElem.removeClass("dark-theme");
+        theme_icon.attr("src", "img/moon.png");
+    } else {
+        $bodyElem.addClass("dark-theme");
+        theme_icon.attr("src", "img/sun.png");
+    }
+};
+
+submit.on("click", submit_handler);
+notes_container.on('click', notes_handler);
+theme_icon.on('click', theme_handler);
+
+submit.on('keypress',function(e) {
+    if(e.which == 13) {
+        submit_handler(e);
+    }
 });
 
-notes_container.on('click', (e) => {
-    const currentNote = e.target.closest('.note-wrap');
-    const id = currentNote.querySelector('span.note-id').textContent;
+notes_container.on('keypress',function(e) {
+    if(e.which == 13) {
+        notes_handler(e);
+    }
+});
 
-    if (e.target.classList.contains("delete")) {
-        deleteNote(id);
-    } else if (e.target.classList.contains("edit")) {
-        editNotePrompt(id);
+theme_icon.on('keypress',function(e) {
+    if(e.which == 13) {
+        theme_handler(e);
     }
 });
