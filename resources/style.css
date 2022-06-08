@@ -16,26 +16,21 @@ hr {
   --hover-color: #000;
   --primary-color: #f0f2fa;
   --secondary-color: #fff;
-
-
+  --slider-color: #F9A03F;
 }
 .dark-theme {
   --text-color: #ffffff;
   --hover-color: #a5a5a5;
   --primary-color: #3a3a3a;
   --secondary-color: #585858;
+  --slider-color: #18F2B2;
 }
 
-.header {
-  display: flex;
+.title {
+  float: left;
 }
-
-#icon{
-  padding-left: 80%;
-  text-align: right;
-  flex: 1;
-  width: 30px;
-  cursor: pointer;
+.icon{
+  float: right;
 }
 
 body {
@@ -69,7 +64,24 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   color: var(--text-color);
 }
 
+.slider_container{
+  display: flex;
+  justify-content: center;
+  padding-bottom: 10px;
+}
+
+.font_slider::-moz-range-progress {
+  background-color: var(--slider-color);
+}
+.font_slider::-moz-range-track {
+  background-color: var(--text-color);
+}
+.font_slider {
+  background-color: var(--primary-color) !important;
+}
+
 p {
+  color: var(--text-color);
   line-height: 1.3125rem;
 }
 

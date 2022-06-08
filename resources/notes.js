@@ -2,7 +2,19 @@ const title = document.getElementById("note_title");
 const body = document.getElementById("note_body");
 const notes_container = $(".note-container");
 const submit = $(".submit");
-var theme_icon = $(".theme_icon");
+const theme_icon = $(".theme_icon");
+const slider = $(".font_slider");
+
+let font_size = slider.val();
+
+// Setup initial font size
+const setFontSize = function() {
+    $('.note-title').css('font-size', (font_size*1.2)+'px');
+    $('.note-text').css('font-size', font_size+'px');
+    $('#note_title').css('font-size', (font_size*1.2)+'px');
+    $('#note_body').css('font-size', font_size+'px');
+};
+
 
 class Note {
     constructor(title, body, id) {
@@ -28,6 +40,7 @@ function renderNote(note) {
             </div>
         </div>`;
     notes_container.append(newNote);
+    setFontSize();
 }
 
 function editNotePrompt(id) {
@@ -86,20 +99,25 @@ submit.on("click", submit_handler);
 notes_container.on('click', notes_handler);
 theme_icon.on('click', theme_handler);
 
-submit.on('keypress',function(e) {
+submit.on('keypress',(e) => {
     if(e.which == 13) {
         submit_handler(e);
     }
 });
 
-notes_container.on('keypress',function(e) {
+notes_container.on('keypress',(e) => {
     if(e.which == 13) {
         notes_handler(e);
     }
 });
 
-theme_icon.on('keypress',function(e) {
+theme_icon.on('keypress',(e) => {
     if(e.which == 13) {
         theme_handler(e);
     }
+});
+
+slider.on('input', (e) => {
+    font_size = parseFloat(e.target.value);
+    setFontSize();
 });
